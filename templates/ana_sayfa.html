@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sitesi Adı</title>
+    <style>body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0; 
+        background-color: white;
+    }
+    
+    header {
+        background-color: turquoise;
+        padding: 20px 0;
+    }
+    
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .logo {
+        width: 70px;
+        height: auto;
+        margin-bottom: -50px; /* Logoyu 10px aşağı indirir */
+      }
+      
+    p{
+        /* color:#484f4f; */
+        font-weight: bold;
+    }
+    
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    
+    nav li {
+        display: inline-block;
+        margin: 0 20px;
+    }
+    
+    nav g {
+        /*display: inline-block;*/
+        margin: 0 20px;
+        float: right;
+    }
+    
+    
+    nav a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    footer {
+        position: fixed; /* Elementi sabit konumlandırır */
+        bottom: 0; /* Altbilgiyi sayfanın altına yerleştirir */
+        width: 100%; /* Altbilginin tam genişlikte olmasını sağlar */
+        background-color: #f0f0f0; /* Altbilgi için arkaplan rengi (isteğe bağlı) */
+        padding: 20px; /* Altbilgideki metin için iç boşluk */
+        text-align: center; /* Metni ortalar */
+    }
+      
+    
+    main {
+        padding: 50px 0;
+    }
+    z{
+        color : black;
+    }
+    
+    g{
+        color: white;
+        align-items: right;
+    }
+    
+    button {
+        background-color: white; /* Butonun arka plan rengini ayarla */
+        border: none; /* Varsayılan kenarlığı kaldır */
+        color: white; /* Metin rengini beyaz olarak ayarla */
+        padding: 10px 20px; /* Biraz dolgu ekle */
+        text-align: center; /* Metni ortala */
+        text-decoration: none; /* Linklerden alt çizgiyi kaldır */
+        display: inline-block; /* Butonları satır içi elementler yap */
+        font-size: 16px; /* Yazı tipi boyutunu ayarla */
+        margin: 4px 2px; /* Biraz boşluk ekle */
+        cursor: pointer; /* Fare imlecini butonun üzerine geldiğinde işaretçiye dönüştür */
+        border-radius: 5px; /* İsteğe bağlı: Butona yuvarlak köşeler ekle */
+    }
+    
+    /* Butonlar için bir hover efekti ekle */
+    button:hover {
+        background-color: #669999; /* Üzerine gelindiğinde buton rengini biraz koyulaştır */
+    }
+    
+    
+    /* ... */
+    
+    .fotograf-kutulari {
+        display: flex;
+        justify-content: center; /* Fotoğraf kutularını yatay olarak ortala */
+        align-items: center; /* Fotoğraf kutularını dikey olarak ortala */
+    }
+    
+    .fotograf-kutusu {
+        width: 30%; /* Her fotoğraf kutusunun genişliği %30 olacak */
+        margin: 10px; /* Fotoğraflar arasında boşluk */
+        border: 0px solid black;
+        text-align: center;
+    }
+    
+    .fotograf-kutusu img {
+        border-radius: 15px;
+        width: 100%; /* Fotoğraflar kutunun içinde tam genişliğe yayılacak */
+        height: auto; /* Fotoğrafların yüksekliği orantılı olarak ayarlanacak */
+    }
+    
+    /* ... */
+    
+    
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="/"><img src="static\images\logo.png" alt="Logo" class="logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="duzelt_sayfasi"><button type="button"><z>Düzyaz.AI</z></button></a></li>
+                    <li><button type="button"><z>Hakkımızda</z></button></li>
+                    <li><button type="button"><z>Kaynaklar</z></button></li>
+                    <li><button type="button"><z>İletişim</z></button></li>
+                    <g><a href="login" class="button"><f>Giriş Yap</f></a></g>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="fotograf-kutulari">
+            <div class="fotograf-kutusu">
+                <img src="static\images\bulut.png" alt="Fotoğraf 1">
+                <p>Yazılarınızı Yükleyin</p> <!-- Fotoğrafın altındaki metin -->
+                <k>Hangi metni düzeltmek istiyorsanız yükleyin</k>
+            </div>
+            <div class="fotograf-kutusu">
+                <img src="static\images\goz.png" alt="Fotoğraf 2">
+                <p>Düzyaz metninizi gözden geçirsin</p> <!-- Fotoğrafın altındaki metin -->
+                <k>Düzyaz metninizi gözden geçirir ve hataları tespit edip size gösterir.</k>
+            </div>
+            <div class="fotograf-kutusu">
+                <img src="static\images\yapboz.png" alt="Fotoğraf 3">
+                <p>Yanlışları Düzeltin</p> <!-- Fotoğrafın altındaki metin -->
+                <k>Yanlışları tek bir tıkla düzelt ve zamandan tasarruf et</k>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2024 Düzyaz.AI</p>
+        </div>
+    </footer>
+</body>
+</html>
