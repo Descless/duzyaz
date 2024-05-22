@@ -1,14 +1,20 @@
-import turkishnlp
+import time
+import logging
+from zemberek import TurkishMorphology, TurkishSentenceNormalizer, TurkishSpellChecker
 
-from turkishnlp import detector
-obj = detector.TurkishNLP()
+logger = logging.getLogger(__name__)
 
-obj.download()
+def correct(example):
+    morphology = TurkishMorphology.create_with_defaults()
+    start = time.time()
+    normalizer = TurkishSentenceNormalizer(morphology)
+    logger.info(f"Normalization instance created in: {time.time() - start} s")
 
-obj.create_word_set()
-def correct(cumle):
-    lwords = obj.list_words(cumle)
-    corrected_words = obj.auto_correct(lwords)
-    corrected_string = " ".join(corrected_words)
-    return corrected_string
+    start = time.time()
+    print(example)
+    print(normalizer.normalize(example), "\n")
+    logger.info(f"Sentences normalized in: {time.time() - start} s")
 
+    start = time.time()
+    sc = TurkishSpellChecker(morphology)
+    logger.info(f"Spell checker instance created in: {time.time() - start} s")

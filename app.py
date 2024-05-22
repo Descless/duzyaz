@@ -47,7 +47,7 @@ def contact():
     
     
 
-@app.route('/correct', methods=['POST'])
+@app.route('/correct', methods=['GET', 'POST'])
 def correct_text():
     input_text = request.form['input']
     corrected_text = correct(input_text)
