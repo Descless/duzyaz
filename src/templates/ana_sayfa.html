@@ -129,7 +129,7 @@
 <body>
     <header>
         <div class="container">
-            <a href="/"><img src="static\images\logo.png" alt="Logo" class="logo"></a>
+            <a href="/"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo"></a>
             <nav>
                 <ul>
                     <li><a href="duzelt_sayfasi"><button type="button"><z>Düzyaz.AI</z></button></a></li>
