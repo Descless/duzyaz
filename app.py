@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from nlp import correct 
+from autoCorrect import turkish_autocorrect_tool
 from flask_mysqldb import MySQL
 
 
@@ -47,10 +47,14 @@ def contact():
     
     
 
-@app.route('/correct', methods=['GET', 'POST'])
+@app.route('/correct', methods=['POST'])
 def correct_text():
-    input_text = request.form['input']
-    corrected_text = correct(input_text)
+    input_text = request.form.get('input')
+
+    if not input_text:
+      return redirect(url_for('about'))
+    
+    corrected_text = turkish_autocorrect_tool(input_text)
     print(corrected_text)
     return render_template('duzelt_sayfasi.html',corrected=corrected_text, text=input_text )
     

@@ -137,9 +137,9 @@
 
     <div class="container2">
         <div class="sol-kutu">
-            <form action="/correct", method="get" >
+            <form action="/correct", method="POST">
                 <textarea id="girisMetni" name="input" placeholder="Düzeltilecek Metni Giriniz">{{ text }}</textarea>
-                <button id="duzeltButonu">Düzelt</button>
+                <button id="duzeltButonu" type="submit">Düzelt</button>
             </form>
         </div>
         <div class="sag-kutu">
