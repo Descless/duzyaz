@@ -1,6 +1,6 @@
 from .autoCorrect import turkish_autocorrect_tool
 from datetime import datetime
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
 # insert data into table.
 def login_page(request, mysql):
@@ -11,13 +11,13 @@ def login_page(request, mysql):
         cursor = mysql.connection.cursor()
         
         # Kullanıcıyı veritabanında sorgula
-        query = "SELECT * FROM users WHERE username=%s AND password_hash=%s"
-        cursor.execute(query, (username, password))
+        query = "SELECT * FROM users WHERE username=%s"
+        cursor.execute(query, (username,))
         
         # Sorgu sonucunu al
         data = cursor.fetchone()
         
-        if data is None:
+        if data is None or not check_password_hash(data[3], password):
             return False
         else:
             return True
@@ -26,14 +26,15 @@ def sign_in(request, mysql):
         email = request.form['email']
         username = request.form['username']
         password = request.form['password']
-        #creation_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
         # Veritabanı bağlantısı kur
         cursor = mysql.connection.cursor()
+
+        password_hash = generate_password_hash(password)
         
         # Kullanıcıyı veritabanında sorgula
         try:
-            cursor.execute('INSERT INTO users (email, username, password_hash) VALUES (%s, %s, %s)', (email, username, password))
+            cursor.execute('INSERT INTO users (email, username, password_hash) VALUES (%s, %s, %s)', (email, username, password_hash))
             mysql.connection.commit()
             print("User inserted successfully")
         except Exception as e:
