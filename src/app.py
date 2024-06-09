@@ -1,3 +1,4 @@
+import os
 from models import model
 from flask import Flask, render_template, request, redirect, url_for
 from flask_mysqldb import MySQL
@@ -5,10 +6,10 @@ import database
 
 app = Flask(__name__)
 
-app.config['MYSQL_HOST'] = database.host
-app.config['MYSQL_USER'] = database.user
-app.config['MYSQL_PASSWORD'] = database.password
-app.config['MYSQL_DB'] = database.database
+app.config['MYSQL_HOST'] = os.getenv('database')
+app.config['MYSQL_USER'] = os.getenv('host')
+app.config['MYSQL_PASSWORD'] = os.getenv('password')
+app.config['MYSQL_DB'] = os.getenv('user')
 
 mysql = MySQL(app)
 
