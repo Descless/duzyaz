@@ -1,7 +1,7 @@
+from models import model
 from flask import Flask, render_template, request, redirect, url_for
 from flask_mysqldb import MySQL
 import database
-from controllers import controller
 
 app = Flask(__name__)
 
@@ -23,14 +23,25 @@ def correct_page():
 @app.route('/login', methods=['GET', 'POST'] )
 def login_page():
     if request.method == 'POST':
-        is_true = controller.login_page(request, mysql)
+        is_true = model.login_page(request, mysql)
         if is_true == False:
            return redirect(url_for('login_page'))
         if is_true == True:
-           return redirect(url_for('correct_page'))
-        
+           return redirect(url_for('correct_page')) 
     else:
-        return render_template('giris_ekrani.html')  
+        return render_template('giris_ekrani.html')
+
+@app.route('/sign_in', methods=['GET', 'POST'] )
+def sign_in_page():
+    if request.method == 'POST':
+        model.sign_in(request, mysql)
+        return redirect(url_for('login_page'))
+        #if is_true == False:
+           #return redirect(url_for('sign_in_page'))
+       # if is_true == True:
+          # return redirect(url_for('login_page'))
+    else:
+        return render_template('kayit_ekrani.html')  
 
 @app.route('/correct', methods=['POST'])
 def correct_text():
@@ -39,7 +50,7 @@ def correct_text():
     if not input_text:
       return redirect(url_for('correct_page'))
 
-    corrected_text = controller.correct_text(input_text)
+    corrected_text = model.correct_text(input_text)
 
     return render_template('duzelt_sayfasi.html',corrected=corrected_text, text=input_text )
     

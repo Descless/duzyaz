@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giriş Sayfası - Web Sitesi Adı</title>
+    <title>Giriş Sayfası</title>
+
     <style>body {
         font-family: Arial, sans-serif;
         margin: 0;
@@ -130,18 +131,18 @@
         background-color: #5d9d9d; /* Buton hover rengi */
     }
     </style>
+
 </head>
 
 <body>
     <header>
         <div class="container">
-            <a href="/"><img src="static\images\logo.png" alt="Logo" class="logo"></a>
+            <a href ="/"><img src="static\images\logo.png" alt="Logo" class="logo"></a>
             <nav>
                 <ul>
-                    <li><a href="duzelt_sayfasi"><button type="button"><z>Düzyaz.AI</z></button></a></li>
-                    <li><button type="button">Hakkımızda</button></li>
-                    <li><button type="button">Kaynaklar</button></li>
-                    <li><button type="button">İletişim</button></li>
+                    <li><a href="urunler.html"><button type="button">Ürünler</button></a></li>
+                    <li><a href="hakkimizda.html"><button type="button">Hakkımızda</button></a></li>
+                    <li><a href="iletisim.html"><button type="button"><z>İletişim</z></button></a></li>
                 </ul>
             </nav>
         </div>
@@ -149,19 +150,24 @@
 
     <main>
         <section class="login-container">
-            <h2>Giriş Yap</h2>
-            <div class="form-group">
-                <form action="/login" method="post">
-                        <label for="username">Kullanıcı Adı:</label>
-                        <input type="text" id="username" name="username" required>
-                        <label for="password">Şifre:</label>
-                        <input type="password" id="password" name="password" required>
-                        <button type="submit">Giriş Yap</button>
-                        </form>
-                        <a href="/sign_in"><button type="submit">Kayıt Ol</button></a>
-                    </div>
-                    
-            
+            <h2>Kayıt Ol</h2>
+            <form action="/sign_in" method="post">
+                <div class="form-group">
+                    <label for="email">E-posta:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">Kullanıcı Adı:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Şifre:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">          
+                    <button type="submit">Kayıt Ol</button>
+                </div>
+            </form>
         </section>
     </main>
     
