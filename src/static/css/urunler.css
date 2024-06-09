@@ -1,0 +1,133 @@
+/* Genel stil ayarları */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+header {
+    background-color: turquoise;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 70px;
+    height: auto;
+    margin-bottom: -50px; /* Logoyu 50px aşağı indirir */
+}
+
+p {
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+button {
+    background-color: white; /* Butonun arka plan rengini ayarla */
+    border: none; /* Varsayılan kenarlığı kaldır */
+    color: black; /* Metin rengini siyah olarak ayarla */
+    padding: 10px 20px; /* Biraz dolgu ekle */
+    text-align: center; /* Metni ortala */
+    text-decoration: none; /* Linklerden alt çizgiyi kaldır */
+    display: inline-block; /* Butonları satır içi elementler yap */
+    font-size: 16px; /* Yazı tipi boyutunu ayarla */
+    margin: 4px 2px; /* Biraz boşluk ekle */
+    cursor: pointer; /* Fare imlecini butonun üzerine geldiğinde işaretçiye dönüştür */
+    border-radius: 5px; /* İsteğe bağlı: Butona yuvarlak köşeler ekle */
+    top: -10px;
+}
+
+/* Butonlar için bir hover efekti ekle */
+button:hover {
+    background-color: #669999; /* Üzerine gelindiğinde buton rengini biraz koyulaştır */
+}
+
+.g .button {
+    position: absolute; /* Pozisyon tipini ayarla */
+    right: 30px;
+    top: 43px;         /* Butonu 10 piksel yukarı taşı */
+    /* Diğer stil özellikleri */
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.g .button:hover {
+    background-color: #669999; /* Fare ile üzerine gelindiğinde rengi değişir */
+}
+
+/* Ürünler bölümünün stil ayarları */
+.product-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 5rem center;
+}
+
+.product {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* Maksimum genişlik ayarla */
+    max-height: 300px; /* Maksimum yükseklik ayarla */
+    object-fit: cover; /* Resmin orantısını koruyarak kırp */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.product h2 {
+    margin: 1rem 0;
+    font-family: 'Times New Roman', serif; /* Yazı tipini Times New Roman olarak ayarla */
+}
+
+.product p {
+    text-align: justify;
+    font-family: 'Times New Roman', serif; /* Yazı tipini Times New Roman olarak ayarla */
+
+    
+}
+
+/* Mobil cihazlar için ayarlamalar */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .product {
+        width: 90%;
+        margin-bottom: 1.5rem;
+    }
+}

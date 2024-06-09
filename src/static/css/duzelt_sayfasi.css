@@ -58,6 +58,27 @@ nav li {
     display: inline-block; /* Menü öğelerini yan yana dizer */
     margin-right: 20px; /* Menü öğeleri arasında boşluk */
 }
+.g .button {
+    position: absolute; /* Pozisyon tipini ayarla */
+    right: 30px;
+    top: 43px;         /* Butonu 10 piksel yukarı taşı */
+    /* Diğer stil özellikleri */
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.g .button:hover {
+    background-color: #669999; /* Fare ile üzerine gelindiğinde rengi değişir */
+}
 
 nav a {
     color: black; /* Turkuaz renk */

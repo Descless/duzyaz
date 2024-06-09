@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Düzyaz.AI İletişim</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/iletisim.css') }}"/>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="/"><img src="static\images\logo.png" alt="Logo" class="logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="/duzelt_sayfasi"><button type="button"><z>Düzyaz.AI</z></button></a></li>
+                    <li><a href="/urunler"><button type="button"><z>Ürünler</z></button></a></li>
+                    <li><a href="/hakkimizda"><button type="button"><z>Hakkımızda</z></button></a></li>
+                    <li><a href="/iletisim"><button type="button"><z>İletişim</z></button></a></li>
+                    <div class="g">
+                        <a href="/logout" class="button">Çıkış Yap</a>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="iletisim-formu">
+        <form action="iletisim_kaydet.php" method="post">
+            <!-- İsim ve email için yeni div.row ekleyin -->
+            <div class="input-row">
+                <div class="form-group">
+                    <label for="isim">İsim:</label>
+                    <input type="text" id="isim" name="isim" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="konu">Konu:</label>
+                <input type="text" id="konu" name="konu" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="mesaj">Mesaj:</label>
+                <textarea id="mesaj" name="mesaj" required></textarea>
+            </div>
+            
+            <button type="submit">Gönder</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Düzyaz.AI</p>
+            <div class="social-icons">
+                <a href="mailto:duzyazai@gmail.com">
+                    <img src="static\images\email_icon.png" alt="E-mail" width="20" height="20" style="vertical-align: middle;"> duzyazai@gmail.com
+                </a>
+                &nbsp;&nbsp;
+                <a href="tel:+905555555555">
+                    <img src="static\images\telefon_icon.png" alt="Telefon" width="20" height="20" style="vertical-align: middle;"> +90 555 555 55 55
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

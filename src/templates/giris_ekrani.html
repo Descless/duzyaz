@@ -3,133 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giriş Sayfası - Web Sitesi Adı</title>
-    <style>body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0; 
-        background-color: white;
-    }
-    
-    header {
-        background-color: turquoise;
-        padding: 20px 0;
-    }
-    
-    .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-    
-    .logo {
-        width: 70px;
-        height: auto;
-        margin-bottom: -50px; /* Logoyu 10px aşağı indirir */
-    }
-    
-    p {
-        font-weight: bold;
-    }
-    
-    nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-    
-    nav li {
-        display: inline-block;
-        margin: 0 20px;
-    }
-    
-    nav a {
-        text-decoration: none;
-        color: white;
-    }
-    
-    footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        background-color: #f0f0f0;
-        padding: 20px;
-        text-align: center;
-    }
-    
-    main {
-        padding: 50px 0;
-    }
-    
-    z {
-        color: black;
-    }
-    
-    button {
-        background-color: white;
-        border: none;
-        color: black;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    
-    button:hover {
-        background-color: #669999;
-    }
-    
-    /* Giriş sayfası için özel stil */
-    .login-container {
-        width: 100%; /* Giriş konteynerinin genişliğini ayarla */
-        max-width: 400px; /* Maksimum genişlik */
-        margin: 30px auto; /* Üstten ve alttan boşluk bırakarak ortala */
-        padding: 20px; /* İç dolgu */
-        background-color: #f9f9f9; /* Arka plan rengi */
-        border-radius: 10px; /* Kenar yuvarlaklığı */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Gölge efekti */
-    }
-    
-    .login-container h2 {
-        color: #333; /* Başlık rengi */
-        margin-bottom: 20px; /* Başlık altındaki boşluk */
-    }
-    
-    .form-group {
-        margin-bottom: 15px; /* Form grupları arasındaki boşluk */
-    }
-    
-    .form-group label {
-        display: block; /* Etiketi blok element yap */
-        margin-bottom: 5px; /* Etiket altındaki boşluk */
-    }
-    
-    .form-group input {
-        width: 100%; /* Input genişliği */
-        padding: 10px; /* Input iç dolgusu */
-        border: 1px solid #ddd; /* Kenarlık */
-        border-radius: 5px; /* Kenar yuvarlaklığı */
-    }
-    
-    .form-group button {
-        width: 100%; /* Buton genişliği */
-        padding: 10px; /* Buton iç dolgusu */
-        background-color: turquoise; /* Buton arka plan rengi */
-        color: white; /* Buton metin rengi */
-        border: none; /* Kenarlık kaldır */
-        border-radius: 5px; /* Kenar yuvarlaklığı */
-        cursor: pointer; /* İmleç */
-    }
-    
-    .form-group button:hover {
-        background-color: #5d9d9d; /* Buton hover rengi */
-    }
-    </style>
+    <title>Giriş Sayfası</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/giris_ekrani.css') }}">
 </head>
 
 <body>
@@ -138,10 +13,10 @@
             <a href="/"><img src="static\images\logo.png" alt="Logo" class="logo"></a>
             <nav>
                 <ul>
-                    <li><a href="duzelt_sayfasi"><button type="button"><z>Düzyaz.AI</z></button></a></li>
-                    <li><button type="button">Hakkımızda</button></li>
-                    <li><button type="button">Kaynaklar</button></li>
-                    <li><button type="button">İletişim</button></li>
+                    <li><a href="/giris_ekrani"><button type="button"><z>Düzyaz.AI</z></button></a></li>
+                    <li><a href="/urunler"><button type="button">Ürünler</button></a></li>
+                    <li><a href="/hakkimizda"><button type="button">Hakkımızda</button></a></li>
+                    <li><a href="/iletisim"><button type="button">İletişim</button></a></li>
                 </ul>
             </nav>
         </div>
@@ -151,17 +26,15 @@
         <section class="login-container">
             <h2>Giriş Yap</h2>
             <div class="form-group">
-                <form action="/login" method="post">
-                        <label for="username">Kullanıcı Adı:</label>
-                        <input type="text" id="username" name="username" required>
-                        <label for="password">Şifre:</label>
-                        <input type="password" id="password" name="password" required>
-                        <button type="submit">Giriş Yap</button>
-                        </form>
-                        <a href="/sign_in"><button type="submit">Kayıt Ol</button></a>
-                    </div>
-                    
-            
+                <form action="/giris_ekrani" method="post">
+                    <label for="username">Kullanıcı Adı:</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Şifre:</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Giriş Yap</button>
+                 </form>
+                 <a href="/sign_in"><button type="submit">Kayıt Ol</button></a>
+                </div>
         </section>
     </main>
     

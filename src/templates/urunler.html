@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürünler</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/urunler.css') }}"/>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+          <a href="/"> <img src="static\images\logo.png" alt="Logo" class="logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="/giris_ekrani"><button type="button"><z>Düzyaz.AI</z></button></a></li>
+                    <li><a href="/urunler"><button type="button"><z>Ürünler</z></button></a></li>
+                    <li><a href="/hakkimizda"><button type="button">Hakkımızda</button></a></li>
+                    <li><a href="/iletisim"><button type="button">İletişim</button></a></li>
+                    <div class="g">
+                        <a href="/giris_ekrani" class="button">Giriş Yap</a>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Ürünler Bölümü -->
+    <section id="urunler">
+        <div class="container product-container">
+            <div class="product">
+                <img src="static\images\kalem.jpg" alt="Kalem" class="product-image">
+                <h2>DuzyazAI Özel Baskılı Kalem</h2>
+                <p>DuzyazAI olarak, yazılarınızı mükemmelleştirme yolculuğunuzda yanınızda olmak için bu özel baskılı kalemleri tasarladık! Sınırlı sayıda üretilen bu şık ve ergonomik kalemler, yazma deneyiminizi daha keyifli hale getirecek. DuzyazAI logosu ile süslenmiş bu kalem, notlarınızı alırken veya fikirlerinizi kağıda dökerken size ilham verecek. Bu özel hediyemizi kazanma şansı yakalamak için hemen kaydolun ve yazılarınızı bir adım öteye taşıyın!</p>
+            </div>
+            <div class="product">
+                <img src="static\images\bardak.jpg" alt="Bardak" class="product-image">
+                <h2>DuzyazAI Özel Baskılı Bardak</h2>
+                <p>DuzyazAI ekibi olarak, siz değerli kullanıcılarımıza özel olarak tasarladığımız bu bardakları hediye ediyoruz! Sınırlı sayıda üretilen bu özel baskılı bardaklarla, yazı düzeltme deneyiminizi bir fincan sıcak kahve veya çay eşliğinde daha keyifli hale getirin. DuzyazAI logosu ile süslenmiş bu bardak, çalışma masanızda şıklığı ve profesyonelliği temsil edecek. Bu özel hediyemizi kazanma şansı yakalamak için hemen kaydolun ve yazılarınızı mükemmelleştirmeye başlayın!</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
