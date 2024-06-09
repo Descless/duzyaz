@@ -2,7 +2,6 @@ import os
 from models import model
 from flask import Flask, render_template, request, redirect, url_for
 from flask_mysqldb import MySQL
-import database
 
 app = Flask(__name__)
 

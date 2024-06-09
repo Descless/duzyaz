@@ -1,5 +1,4 @@
 from .autoCorrect import turkish_autocorrect_tool
-from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 
 # insert data into table.
