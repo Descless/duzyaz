@@ -1,16 +1,31 @@
 import os
 from models import model
 from flask import Flask, render_template, request, redirect, url_for
-from flask_mysqldb import MySQL
+#from flask_mysqldb import MySQL
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config['MYSQL_HOST'] = os.getenv('database')
-app.config['MYSQL_USER'] = os.getenv('host')
-app.config['MYSQL_PASSWORD'] = os.getenv('password')
-app.config['MYSQL_DB'] = os.getenv('user')
+SQLALCHEMY_DATABASE_URI = f"postgresql://{os.getenv('host')}:{os.getenv('password')}@{os.getenv('database')}/{os.getenv('user')}"
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+db = SQLAlchemy(app)
 
-mysql = MySQL(app)
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    password = db.Column(db.String(120), nullable=False)
+
+    def __repr__(self):
+        return f'<User {self.username}>'
+
+
+
+# app.config['MYSQL_HOST'] = os.getenv('database')
+# app.config['MYSQL_USER'] = os.getenv('host')
+# app.config['MYSQL_PASSWORD'] = os.getenv('password')
+# app.config['MYSQL_DB'] = os.getenv('user')
+
+# mysql = MySQL(app)
 
 is_logged_in = False
 
@@ -31,7 +46,7 @@ def correct_page():
 def login_page():
     global is_logged_in
     if request.method == 'POST':
-        is_true = model.login_page(request, mysql)
+        is_true = model.login_page(request, User)
         if is_true == False:
            return redirect(url_for('login_page'))
         if is_true == True:
@@ -44,7 +59,7 @@ def login_page():
 @app.route('/sign_in', methods=['GET', 'POST'] )
 def sign_in_page():
     if request.method == 'POST':
-        model.sign_in(request, mysql)
+        model.sign_in(request, db, User)
         return redirect(url_for('login_page'))
     else:
         return render_template('kayit_ekrani.html')  
