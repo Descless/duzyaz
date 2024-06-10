@@ -7,10 +7,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 def login_page(request, User):
         username = request.form['username']
         password = request.form['password']
-        
 
-        user = User.query.filter_by(username=username, password=password).first()
-        if user:
+        user = User.query.filter_by(username=username).first()
+        if user or check_password_hash(User[3], password):
              return True
         return False
 
@@ -35,13 +34,14 @@ def sign_in(request, db, User):
         username = request.form['username']
         password = request.form['password']
 
-        new_user = User(username=username, password=password)
+        password_hash = generate_password_hash(password)
+
+        new_user = User(username=username, password_hash=password_hash, email = email)
         db.session.add(new_user)
         db.session.commit()
         # Veritabanı bağlantısı kur
         # cursor = mysql.connection.cursor()
 
-        # password_hash = generate_password_hash(password)
         
         # # Kullanıcıyı veritabanında sorgula
         # try:
