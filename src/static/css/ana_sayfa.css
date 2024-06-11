@@ -6,8 +6,13 @@ body {
 }
 
 header {
-    background-color: turquoise;
+    background-color: turquoise; /* Başlık arkaplan rengi */
     padding: 20px 0;
+    width: 100%; /* Tam genişlik */
+    top: 0; /* Üste sabitler */
+    left: 0; /* Sola sabitler */
+    z-index: 100; /* Diğer elementlerin üstünde yer almasını sağlar */
+    box-sizing: border-box; /* İç ve dış kenar boşluklarını birleştirir */
 }
 
 .container {
@@ -19,7 +24,8 @@ header {
 .logo {
     width: 70px;
     height: auto;
-    margin-bottom: -50px; /* Logoyu 10px aşağı indirir */
+    margin-bottom: -50px; 
+    z-index: -1;
 }
 
 p {
@@ -32,8 +38,7 @@ nav ul {
     padding: 0;
     text-align: center;
     display: flex;
-    justify-content: center; /* Butonları yatay olarak ortalar */
-    align-items: center; /* Butonları dikey olarak ortalar */
+    justify-content: center;
 }
 
 nav li {
@@ -41,11 +46,14 @@ nav li {
 }
 
 .g .button {
+    position: absolute; /* Pozisyon tipini ayarla */
+    right: 30px;
+    /* Diğer stil özellikleri */
     background-color: white;
     border: none;
     color: black;
     padding: 10px 20px;
-    text-align: center;
+    text-align: right;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
@@ -135,22 +143,22 @@ button:hover {
 
     .logo {
         width: 50px;
-        margin-bottom: -40px;
+        margin-bottom: 0;
     }
 
     nav ul {
-        flex-direction: column; /* Küçük ekranlarda butonları dikey hizalar */
+        flex-direction: row; /* Küçük ekranlarda butonları yatay hizalar */
+        flex-wrap: wrap; /* Butonların küçük ekranlarda sarılmasını sağlar */
     }
 
     nav li {
-        margin: 10px 0;
+        margin: 5px 10px; /* Butonlar arasında daha az boşluk bırakır */
     }
 
     .g .button {
-        right: 10px;
-        top: 30px;
-        padding: 5px 10px;
+        padding: 5px 5px;
         font-size: 14px;
+        margin: 4px 2px;
     }
 
     .fotograf-kutulari {
@@ -161,6 +169,15 @@ button:hover {
         width: 90%;
         margin: 10px 0;
     }
+
+    button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    footer {
+        padding: 2px; /* Altbilgideki metin için iç boşluk */
+    }
 }
 
 @media (max-width: 480px) {
@@ -170,15 +187,17 @@ button:hover {
 
     .logo {
         width: 40px;
-        margin-bottom: -30px;
+        margin-bottom: 0;
     }
 
     nav ul {
         text-align: center;
+        flex-direction: row; /* Daha küçük ekranlarda da yatay hizalama */
+        flex-wrap: wrap; /* Butonların sarılmasını sağlar */
     }
 
     nav li {
-        margin: 5px 0;
+        margin: 5px 5px; /* Daha az boşluk bırakır */
     }
 
     .g .button {
@@ -187,13 +206,21 @@ button:hover {
         top: 20px;
     }
 
+    .fotograf-kutulari {
+        flex-direction: column;
+    }
+
     .fotograf-kutusu {
         width: 100%;
         margin: 5px 0;
     }
 
     button {
-        padding: 8px 15px;
-        font-size: 14px;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    footer {
+        padding: 2px; /* Altbilgideki metin için iç boşluk */
     }
 }

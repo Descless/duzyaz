@@ -91,23 +91,17 @@ button:hover {
 }
 
 .hakkimizda-resim {
-    width: 150px; /* Resim genişliği */
-    height: 150px; /* Resim yüksekliği */
-    margin-right: 20px; /* Resim ile metin arasında boşluk bırakıyoruz */
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* Maksimum genişlik ayarla */
+    max-height: 300px; /* Maksimum yükseklik ayarla */
+    object-fit: cover; /* Resmin orantısını koruyarak kırp */
+    border-radius: 8px;
+    margin-bottom: 1rem;
 }
 
 .hakkimizda-metin {
     flex: 1; /* Metin bölümü kalan alanı kaplar */
-}
-
-/* Responsive tasarım için ek stiller */
-@media (max-width: 768px) {
-    .hakkimizda-kisim {
-        flex-direction: column; /* Ekran dar olduğunda içerikleri dikey sıralıyoruz */
-    }
-    .hakkimizda-resim {
-        margin: 0 auto 20px; /* Resmi üstte ve ortada hizalıyoruz */
-    }
 }
 
 .container {
@@ -158,4 +152,105 @@ p {
 p {
     flex: 1; /* Metnin esnekliğini ayarlayarak resimle aynı hizada olmasını sağlar */
     font-size: 20px;
+}
+
+@media (max-width: 768px) {
+
+    .hakkimizda-kisim {
+        flex-direction: column; /* Ekran dar olduğunda içerikleri dikey sıralıyoruz */
+    }
+    .hakkimizda-resim {
+        margin: 0 auto 20px; /* Resmi üstte ve ortada hizalıyoruz */
+    }
+
+    header {
+        flex-direction: column; /* Küçük ekranlarda sütun haline getir */
+        align-items: center; /* İçeriği ortala */
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .logo {
+        width: 50px;
+        margin-bottom: 0;
+    }
+
+    nav ul {
+        flex-direction: column; /* Küçük ekranlarda butonları yatay hizalar */
+    }
+
+    nav li {
+        margin: 5px 10px; /* Butonlar arasında daha az boşluk bırakır */
+    }
+
+    .g .button {
+        padding: 5px 5px;
+        font-size: 14px;
+        margin: 4px 2px;
+    }
+
+    .fotograf-kutulari {
+        flex-direction: column;
+    }
+
+    .fotograf-kutusu {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    footer {
+        padding: 2px; /* Altbilgideki metin için iç boşluk */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 5px 0;
+    }
+
+    .logo {
+        width: 40px;
+        margin-bottom: 0;
+    }
+
+    nav ul {
+        text-align: center;
+        flex-direction: row; /* Daha küçük ekranlarda da yatay hizalama */
+        flex-wrap: wrap; /* Butonların sarılmasını sağlar */
+    }
+
+    nav li {
+        margin: 5px 5px; /* Daha az boşluk bırakır */
+    }
+
+    .g .button {
+        padding: 5px 10px;
+        font-size: 12px;
+        top: 20px;
+    }
+
+    .fotograf-kutulari {
+        flex-direction: column;
+    }
+
+    .fotograf-kutusu {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    footer {
+        padding: 2px; /* Altbilgideki metin için iç boşluk */
+    }
 }
