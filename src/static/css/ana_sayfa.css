@@ -1,135 +1,199 @@
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0; 
-        background-color: white;
-    }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0; 
+    background-color: white;
+}
 
+header {
+    background-color: turquoise;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 70px;
+    height: auto;
+    margin-bottom: -50px; /* Logoyu 10px aşağı indirir */
+}
+
+p {
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Butonları yatay olarak ortalar */
+    align-items: center; /* Butonları dikey olarak ortalar */
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+.g .button {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.g .button:hover {
+    background-color: #669999; /* Fare ile üzerine gelindiğinde rengi değişir */
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+footer {
+    position: fixed; /* Elementi sabit konumlandırır */
+    bottom: 0; /* Altbilgiyi sayfanın altına yerleştirir */
+    width: 100%; /* Altbilginin tam genişlikte olmasını sağlar */
+    background-color: #f0f0f0; /* Altbilgi için arkaplan rengi (isteğe bağlı) */
+    padding: 20px; /* Altbilgideki metin için iç boşluk */
+    text-align: center; /* Metni ortalar */
+}
+
+main {
+    padding: 50px 0;
+}
+
+z {
+    color: black;
+}
+
+g {
+    color: white;
+    align-items: right;
+}
+
+button {
+    background-color: white; /* Butonun arka plan rengini ayarla */
+    border: none; /* Varsayılan kenarlığı kaldır */
+    color: black; /* Metin rengini beyaz olarak ayarla */
+    padding: 10px 20px; /* Biraz dolgu ekle */
+    text-align: center; /* Metni ortala */
+    text-decoration: none; /* Linklerden alt çizgiyi kaldır */
+    display: inline-block; /* Butonları satır içi elementler yap */
+    font-size: 16px; /* Yazı tipi boyutunu ayarla */
+    margin: 4px 2px; /* Biraz boşluk ekle */
+    cursor: pointer; /* Fare imlecini butonun üzerine geldiğinde işaretçiye dönüştür */
+    border-radius: 5px; /* İsteğe bağlı: Butona yuvarlak köşeler ekle */
+    top: -10px;
+}
+
+button:hover {
+    background-color: #669999; /* Üzerine gelindiğinde buton rengini biraz koyulaştır */
+}
+
+.fotograf-kutulari {
+    display: flex;
+    justify-content: center; /* Fotoğraf kutularını yatay olarak ortala */
+    align-items: center; /* Fotoğraf kutularını dikey olarak ortala */
+}
+
+.fotograf-kutusu {
+    width: 30%; /* Her fotoğraf kutusunun genişliği %30 olacak */
+    margin: 10px; /* Fotoğraflar arasında boşluk */
+    border: 0px solid black;
+    text-align: center;
+}
+
+.fotograf-kutusu img {
+    border-radius: 15px;
+    width: 100%; /* Fotoğraflar kutunun içinde tam genişliğe yayılacak */
+    height: auto; /* Fotoğrafların yüksekliği orantılı olarak ayarlanacak */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
     header {
-        background-color: turquoise;
-        padding: 20px 0;
+        padding: 10px 0;
     }
 
     .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 10px;
     }
 
     .logo {
-        width: 70px;
-        height: auto;
-        margin-bottom: -50px; /* Logoyu 10px aşağı indirir */
-    }
-    
-    p{
-        /* color:#484f4f; */
-        font-weight: bold;
+        width: 50px;
+        margin-bottom: -40px;
     }
 
     nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+        flex-direction: column; /* Küçük ekranlarda butonları dikey hizalar */
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    .g .button {
+        right: 10px;
+        top: 30px;
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    .fotograf-kutulari {
+        flex-direction: column;
+    }
+
+    .fotograf-kutusu {
+        width: 90%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 5px 0;
+    }
+
+    .logo {
+        width: 40px;
+        margin-bottom: -30px;
+    }
+
+    nav ul {
         text-align: center;
     }
 
     nav li {
-        display: inline-block;
-        margin: 0 20px;
+        margin: 5px 0;
     }
 
     .g .button {
-        position: absolute; /* Pozisyon tipini ayarla */
-        right: 30px;
-        top: 43px;         /* Butonu 10 piksel yukarı taşı */
-        /* Diğer stil özellikleri */
-        background-color: white;
-        border: none;
-        color: black;
-        padding: 10px 20px;
-        text-align: right;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 5px;
-      }      
-
-    .g .button:hover {
-        background-color: #669999; /* Fare ile üzerine gelindiğinde rengi değişir */
-    }
-    
-    nav a {
-        text-decoration: none;
-        color: white;
-    }
-
-    footer {
-        position: fixed; /* Elementi sabit konumlandırır */
-        bottom: 0; /* Altbilgiyi sayfanın altına yerleştirir */
-        width: 100%; /* Altbilginin tam genişlikte olmasını sağlar */
-        background-color: #f0f0f0; /* Altbilgi için arkaplan rengi (isteğe bağlı) */
-        padding: 20px; /* Altbilgideki metin için iç boşluk */
-        text-align: center; /* Metni ortalar */
-    }
-    
-
-    main {
-        padding: 50px 0;
-    }
-    z{
-        color : black;
-    }
-
-    g{
-        color: white;
-        align-items: right;
-    }
-
-    button {
-        background-color: white; /* Butonun arka plan rengini ayarla */
-        border: none; /* Varsayılan kenarlığı kaldır */
-        color: black; /* Metin rengini beyaz olarak ayarla */
-        padding: 10px 20px; /* Biraz dolgu ekle */
-        text-align: center; /* Metni ortala */
-        text-decoration: none; /* Linklerden alt çizgiyi kaldır */
-        display: inline-block; /* Butonları satır içi elementler yap */
-        font-size: 16px; /* Yazı tipi boyutunu ayarla */
-        margin: 4px 2px; /* Biraz boşluk ekle */
-        cursor: pointer; /* Fare imlecini butonun üzerine geldiğinde işaretçiye dönüştür */
-        border-radius: 5px; /* İsteğe bağlı: Butona yuvarlak köşeler ekle */
-        top: -10px;
-    }
-
-    /* Butonlar için bir hover efekti ekle */
-    button:hover {
-        background-color: #669999; /* Üzerine gelindiğinde buton rengini biraz koyulaştır */
-    }
-
-
-    /* ... */
-
-    .fotograf-kutulari {
-        display: flex;
-        justify-content: center; /* Fotoğraf kutularını yatay olarak ortala */
-        align-items: center; /* Fotoğraf kutularını dikey olarak ortala */
+        padding: 5px 10px;
+        font-size: 12px;
+        top: 20px;
     }
 
     .fotograf-kutusu {
-        width: 30%; /* Her fotoğraf kutusunun genişliği %30 olacak */
-        margin: 10px; /* Fotoğraflar arasında boşluk */
-        border: 0px solid black;
-        text-align: center;
+        width: 100%;
+        margin: 5px 0;
     }
 
-    .fotograf-kutusu img {
-        border-radius: 15px;
-        width: 100%; /* Fotoğraflar kutunun içinde tam genişliğe yayılacak */
-        height: auto; /* Fotoğrafların yüksekliği orantılı olarak ayarlanacak */
+    button {
+        padding: 8px 15px;
+        font-size: 14px;
     }
-
-    /* ... */
-
-
+}
