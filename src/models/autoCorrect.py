@@ -1,7 +1,7 @@
 import openai
-
+import os
 # OpenAI API anahtarınızı burada belirtin
-openai.api_key = '#'
+openai.api_key = os.getenv('token')
 
 def turkish_autocorrect_tool(text):
     response = openai.ChatCompletion.create(
