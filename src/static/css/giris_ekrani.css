@@ -122,6 +122,28 @@ button:hover {
     background-color: #5d9d9d; /* Buton hover rengi */
 }
 
+.g .button {
+    position: absolute; /* Pozisyon tipini ayarla */
+    right: 30px;
+    top: 43px;         /* Butonu 10 piksel yukarı taşı */
+    /* Diğer stil özellikleri */
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.g .button:hover {
+    background-color: #669999; /* Fare ile üzerine gelindiğinde rengi değişir */
+}
+
 @media (max-width: 768px) {
     header {
         padding: 30px 0;
@@ -162,6 +184,12 @@ button:hover {
     footer {
         padding: 2px; /* Altbilgideki metin için iç boşluk */
     }
+
+    .g .button {
+        padding: 5px 5px;
+        font-size: 14px;
+        margin: 4px 2px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -185,9 +213,9 @@ button:hover {
     }
 
     .g .button {
-        padding: 5px 10px;
-        font-size: 12px;
-        top: 20px;
+        padding: 5px 5px;
+        font-size: 14px;
+        margin: 4px 2px;
     }
 
     .fotograf-kutulari {
