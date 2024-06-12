@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Sitesi Adı</title>
+    <title>Ürünler</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/hakkimizda.css') }}"/>
 </head>
 
 <body>
     <header>
         <div class="container">
-            <a href="/"><img src="static\images\logo.png" alt="Logo" class="logo"></a> 
+          <a href="/"> <img src="static\images\logo.png" alt="Logo" class="logo"></a>
             <nav>
                 <ul>
                     <li><a href="/giris_ekrani"><button type="button"><z>Düzyaz.AI</z></button></a></li>
                     <li><a href="/urunler"><button type="button"><z>Ürünler</z></button></a></li>
                     <li><a href="/hakkimizda"><button type="button">Hakkımızda</button></a></li>
-                    <li><a href="/iletisim"><button type="button"><z>İletişim</z></button></a></li>
+                    <li><a href="/iletisim"><button type="button">İletişim</button></a></li>
                     <div class="g">
                         <a href="/giris_ekrani" class="button">Giriş Yap</a>
                     </div>
@@ -25,40 +25,25 @@
         </div>
     </header>
 
-
-       <!-- Biz Kimiz Bölümü -->
-    <section id="biz-kimiz">
-        <div class="container">
-            <h2>Biz Kimiz</h2>
-            <div class="content-wrapper">
-                <img src="static\images\images.jpeg" alt="Biz Kimiz Fotoğrafı" class="biz-kimiz-foto">
-                <p>Biz, beş kişilik bir bilgisayar mühendisliği öğrencisi grubuyuz. Yazılım mühendisliği dersinde bir proje olarak geliştirdiğimiz metin düzeltme yazılımıyla bir araya geldik.
-                    Amacımız, yazım hatalarını bulma ve düzeltme konusunda etkili bir araç sunarak dil becerilerini geliştirmek ve yazılı iletişimi kolaylaştırmaktır.</p>
+    <!-- Ürünler Bölümü -->
+    <section id="urunler">
+        <div class="container product-container">
+            <div class="product">
+                <img src="static\images\biz_kimiz.png"  class="product-image">
+                <h2>Biz Kimiz</h2>
+                <p>Biz, beş kişilik bir bilgisayar mühendisliği öğrencisi grubuyuz. Yazılım mühendisliği dersinde bir proje olarak geliştirdiğimiz metin düzeltme yazılımıyla bir araya geldik. Amacımız, yazım hatalarını bulma ve düzeltme konusunda etkili bir araç sunarak dil becerilerini geliştirmek ve yazılı iletişimi kolaylaştırmaktır.</p>
+            </div>
+            <div class="product">
+                <img src="static\images\vizyonumuz.jpg"  class="product-image">
+                <h2>Vizyonumuz</h2>
+                <p>Vizyonumuz, yazım hatalarını düzeltme teknolojilerini geliştirerek kullanıcıların daha iyi yazılar yazmalarına ve iletişim kurmalarına yardımcı olmaktır. Gelecekte, dil teknolojileri üzerindeki çalışmalarımızı genişleterek daha kapsamlı bir dil hizmetleri platformu olmayı hedefliyoruz.</p>
+            </div>
+            <div class="product">
+                <br><br><img src="static\images\misyonumuz.png"  class="product-image">
+                <h2><br><br><br>Misyonumuz</h2>
+                <p>Misyonumuz, kullanıcıların metinlerindeki yazım hatalarını tespit etmelerine ve düzeltmelerine yardımcı olarak daha doğru ve etkili iletişim kurmalarını sağlamaktır. Kullanıcılarımıza dil becerilerini geliştirmede ve yazılı iletişimde daha güvenli olmaları için araçlar sunuyoruz.</p>
             </div>
         </div>
-    </section>
-    
-    <!-- Vizyonumuz Bölümü -->
-    <section id="vizyonumuz">
-        <div class="container">
-            <h2>Vizyonumuz</h2>
-            <div class="content-wrapper">
-                <img src="static\images\vizyonumuz.jpg" alt="Vizyonumuz Fotoğrafı" class="vizyonumuz-foto">
-            <p>Vizyonumuz, yazım hatalarını düzeltme teknolojilerini geliştirerek kullanıcıların daha iyi yazılar yazmalarına ve iletişim kurmalarına yardımcı olmaktır.
-                 Gelecekte, dil teknolojileri üzerindeki çalışmalarımızı genişleterek daha kapsamlı bir dil hizmetleri platformu olmayı hedefliyoruz.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Misyonumuz Bölümü -->
-    <section id="misyonumuz">
-        <div class="container">
-            <h2>Misyonumuz</h2>
-            <div class="content-wrapper">
-            <img src="static\images\misyonumuz.png" alt="Misyonumuz Fotoğrafı" class="misyonumuz-foto">
-            <p>Misyonumuz, kullanıcıların metinlerindeki yazım hatalarını tespit etmelerine ve düzeltmelerine yardımcı olarak daha doğru ve etkili iletişim kurmalarını sağlamaktır.
-                 Kullanıcılarımıza dil becerilerini geliştirmede ve yazılı iletişimde daha güvenli olmaları için araçlar sunuyoruz.</p>
-            </div>
-         </div>
     </section>
 </body>
+</html>
